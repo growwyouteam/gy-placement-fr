@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JGroww You Job Application Form</title>
+      <link rel="shortcut icon" href="img/grwu.svg" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <link href="job-application-form.css" rel="stylesheet">
+</head>
+<body>
+    <div class="application-form-wrapper">
+        <div class="application-form-container">
+            <!-- Back Button -->
+            <button type="button" class="back-btn" onclick="window.history.back()">
+                <i class="ri-arrow-left-line"></i> Back
+            </button>
+            
+            <!-- Header Section -->
+            <div class="form-header">
+                <div class="form-header-icon">
+                    <i class="ri-briefcase-4-fill"></i>
+                </div>
+                <h2>Job Application Form</h2>
+                <p class="form-subtitle">Join our team and grow your career with us</p>
+            </div>
+
+            <!-- Progress Indicator -->
+            <div class="progress-indicator">
+                <div class="progress-step active" data-step="1">
+                    <div class="step-circle">
+                        <i class="ri-user-3-line"></i>
+                    </div>
+                    <span>Personal</span>
+                </div>
+                <div class="progress-line"></div>
+                <div class="progress-step" data-step="2">
+                    <div class="step-circle">
+                        <i class="ri-briefcase-line"></i>
+                    </div>
+                    <span>Position</span>
+                </div>
+                <div class="progress-line"></div>
+                <div class="progress-step" data-step="3">
+                    <div class="step-circle">
+                        <i class="ri-graduation-cap-line"></i>
+                    </div>
+                    <span>Education</span>
+                </div>
+                <div class="progress-line"></div>
+                <div class="progress-step" data-step="4">
+                    <div class="step-circle">
+                        <i class="ri-building-2-line"></i>
+                    </div>
+                    <span>Experience</span>
+                </div>
+                <div class="progress-line"></div>
+                <div class="progress-step" data-step="5">
+                    <div class="step-circle">
+                        <i class="ri-file-text-line"></i>
+                    </div>
+                    <span>Details</span>
+                </div>
+            </div>
+
+            <form id="applicationForm">
+                <!-- Section 1: Personal Information -->
+                <div class="form-section active" id="section1">
+                    <div class="section-header">
+                        <div class="section-number">01</div>
+                        <div class="section-title">
+                            <h3><i class="ri-user-3-fill"></i> Personal Information</h3>
+                            <p>Tell us about yourself</p>
+                        </div>
+                    </div>
+                    <div class="form-grid">
+                        <div class="form-field">
+                            <label>
+                                <span class="label-text">Full Name</span>
+                                <span class="required">*</span>
+                            </label>
+                            <input type="text" name="fullName" placeholder="John Doe" required />
+                        </div>
+                        <div class="form-field">
+                            <label>
+                                <span class="label-text">Email Address</span>
+                                <span class="required">*</span>
+                            </label>
+                            <input type="email" name="email" placeholder="john.doe@example.com" required />
+                        </div>
+                        <div class="form-field">
+                            <label>
+                                <span class="label-text">Phone Number</span>
+                                <span class="required">*</span>
+                            </label>
+                            <input type="tel" name="phone" placeholder="+91 98765 43210" required />
+                        </div>
+                        <div class="form-field">
+                            <label>
+                                <span class="label-text">Date of Birth</span>
+                                <span class="required">*</span>
+                            </label>
+                            <input type="date" name="dateOfBirth" required />
+                        </div>
+                        <div class="form-field full-width">
+                            <label>
+                                <span class="label-text">Current Address</span>
+                                <span class="required">*</span>
+                            </label>
+                            <input type="text" name="currentAddress" placeholder="123 Main Street, City, State" required />
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Section 2: Position Information -->
+                <div class="form-section" id="section2">
+                    <div class="section-header">
+                        <div class="section-number">02</div>
+                        <div class="section-title">
+                            <h3><i class="ri-rocket-2-fill"></i> Position Information</h3>
+                            <p>What role are you applying for?</p>
+                        </div>
+                    </div>
+                    <div class="form-grid">
+                        <div class="form-field">
+                            <label>
+                                <span class="label-text">Position Applied For</span>
+                                <span class="required">*</span>
+                            </label>
+                            <input type="text" name="positionAppliedFor" placeholder="Software Engineer" required />
+                        </div>
+                        <div class="form-field">
+                            <label>
+                                <span class="label-text">Job Type</span>
+                                <span class="required">*</span>
+                            </label>
+                            <select name="jobType" required>
+                                <option value="">Select Job Type</option>
+                                <option value="Full Time">Full Time</option>
+                                <option value="Part Time">Part Time</option>
+                                <option value="Intern">Internship</option>
+                                <option value="Contract">Contract</option>
+                            </select>
+                        </div>
+                        <div class="form-field">
+                            <label>
+                                <span class="label-text">Expected Salary (Annual)</span>
+                            </label>
+                            <input type="number" name="expectedSalary" placeholder="500000" />
+                        </div>
+                        <div class="form-field">
+                            <label>
+                                <span class="label-text">Have You Applied Before?</span>
+                            </label>
+                            <select name="appliedBefore">
+                                <option value="">Select Option</option>
+                                <option value="Yes">Yes</option>
+                                <option value="No">No</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Section 3: Education -->
+                <div class="form-section" id="section3">
+                    <div class="section-header">
+                        <div class="section-number">03</div>
+                        <div class="section-title">
+                            <h3><i class="ri-graduation-cap-fill"></i> Education</h3>
+                            <p>Your academic background</p>
+                        </div>
+                    </div>
+                    <div class="form-grid">
+                        <div class="form-field">
+                            <label>
+                                <span class="label-text">School/University Name</span>
+                                <span class="required">*</span>
+                            </label>
+                            <input type="text" name="schoolUniversity" placeholder="ABC University" required />
+                        </div>
+                        <div class="form-field">
+                            <label>
+                                <span class="label-text">Degree Type</span>
+                                <span class="required">*</span>
+                            </label>
+                            <input type="text" name="degreeType" placeholder="Bachelor's / Master's / PhD" required />
+                        </div>
+                        <div class="form-field">
+                            <label>
+                                <span class="label-text">Field of Study</span>
+                                <span class="required">*</span>
+                            </label>
+                            <input type="text" name="fieldOfStudy" placeholder="Computer Science" required />
+                        </div>
+                        <div class="form-field">
+                            <label>
+                                <span class="label-text">Graduation Year</span>
+                                <span class="required">*</span>
+                            </label>
+                            <input type="number" name="graduationYear" placeholder="2024" min="1950" max="2030" required />
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Section 4: Work Experience -->
+                <div class="form-section" id="section4">
+                    <div class="section-header">
+                        <div class="section-number">04</div>
+                        <div class="section-title">
+                            <h3><i class="ri-building-2-fill"></i> Work Experience</h3>
+                            <p>Your professional background (Optional)</p>
+                        </div>
+                    </div>
+                    <div class="form-grid">
+                        <div class="form-field full-width">
+                            <label>
+                                <span class="label-text">Most Recent Employer</span>
+                            </label>
+                            <input type="text" name="mostRecentEmployer" placeholder="Company Name" />
+                        </div>
+                        <div class="form-field">
+                            <label>
+                                <span class="label-text">Duration From</span>
+                            </label>
+                            <input type="month" name="durationFrom" />
+                        </div>
+                        <div class="form-field">
+                            <label>
+                                <span class="label-text">Duration To</span>
+                            </label>
+                            <input type="month" name="durationTo" />
+                        </div>
+                        <div class="form-field full-width">
+                            <label>
+                                <span class="label-text">Key Responsibilities</span>
+                            </label>
+                            <textarea rows="4" name="keyResponsibilities" placeholder="Describe your key responsibilities and achievements..."></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Section 5: Skills & Resume -->
+                <div class="form-section" id="section5">
+                    <div class="section-header">
+                        <div class="section-number">05</div>
+                        <div class="section-title">
+                            <h3><i class="ri-lightbulb-flash-fill"></i> Skills & Documents</h3>
+                            <p>Your expertise and resume</p>
+                        </div>
+                    </div>
+                    <div class="form-grid">
+                        <div class="form-field">
+                            <label>
+                                <span class="label-text">Key Skills</span>
+                                <span class="required">*</span>
+                            </label>
+                            <input type="text" name="keySkills" placeholder="React, Node.js, Python, SQL" required />
+                        </div>
+                        <div class="form-field">
+                            <label>
+                                <span class="label-text">Languages Spoken</span>
+                                <span class="required">*</span>
+                            </label>
+                            <input type="text" name="languagesSpoken" placeholder="English, Hindi, Spanish" required />
+                        </div>
+                        <div class="form-field full-width">
+                            <label>
+                                <span class="label-text">Upload Resume (PDF only)</span>
+                                <span class="required">*</span>
+                            </label>
+                            <input type="file" name="resume" accept="application/pdf" required />
+                        </div>
+                        <div class="form-field full-width">
+                            <label>
+                                <span class="label-text">Application Deadline</span>
+                                <span class="required">*</span>
+                            </label>
+                            <input type="date" name="finalDate" required />
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Navigation Buttons (for all sections except last) -->
+                <div class="form-navigation" id="formNavigation">
+                    <button type="button" class="btn-nav btn-prev" id="prevBtn">
+                        <i class="ri-arrow-left-line"></i> Previous
+                    </button>
+                    <button type="button" class="btn-nav btn-next" id="nextBtn">
+                        Next <i class="ri-arrow-right-line"></i>
+                    </button>
+                </div>
+
+                <!-- Submit Button (only on last section) -->
+                <div class="form-actions" id="formActions" style="display: none;">
+                    <button type="submit" class="submit-btn" id="submitBtn">
+                        <i class="ri-send-plane-2-fill"></i>
+                        Submit Application
+                    </button>
+                </div>
+
+                <div class="application-form-footer">
+                    <i class="ri-information-line"></i>
+                    Thank you for your interest! We will review your application and contact you soon.
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Confetti Animation -->
+    <canvas id="confetti-canvas" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 9999; display: none;"></canvas>
+
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/job-form-handler.js"></script>
+</body>
+</html>

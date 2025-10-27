@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Employers - GrowwYou Job Portal</title>
+    <link rel="shortcut icon" href="img/grwu.svg" type="image/x-icon">
+
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav>
+        <div class="nav__container">
+            <div class="nav__logos">
+                <a href="index.html" class="logos">Groww<span>You</span></a>
+            </div>
+            <div class="nav__menu__btn" onclick="toggleMenu()">
+                <i class="ri-menu-line"></i>
+            </div>
+            <div class="nav__backdrop" id="navBackdrop" onclick="toggleMenu()"></div>
+            <ul class="nav__links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="jobs.html">Jobs</a></li>
+                <li><a href="service.html">Services</a></li>
+                <li><a href="client.html">Client</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Client Section -->
+    <section class="section__container client__container" id="client">
+        <div class="client__header">
+            <h1 class="section__header">For <span>Employers</span></h2>
+            <p class="section__description">
+                Find the best talent for your organization with our comprehensive recruitment solutions.
+                Post jobs, manage applications, and hire top candidates efficiently.
+            </p>
+        </div>
+
+        <div class="client__content">
+            <div class="client__services">
+                <h2 class="section__header">Our <span>Employer Services</span></h2>
+                <div class="services__grid">
+                    <div class="service__card">
+                        <div class="service__icon">
+                            <i class="ri-user-add-line"></i>
+                        </div>
+                        <h4>Talent Acquisition</h4>
+                        <p class="service__description">Find the perfect candidates for your open positions with our advanced matching system and extensive talent pool.</p>
+                        <div class="service__features">
+                            <span class="feature__tag"><i class="ri-check-line"></i>AI-powered candidate matching</span>
+                            <span class="feature__tag"><i class="ri-check-line"></i>Verified candidate profiles</span>
+                            <span class="feature__tag"><i class="ri-check-line"></i>Bulk hiring solutions</span>
+                            <span class="feature__tag"><i class="ri-check-line"></i>Talent pool access</span>
+                        </div>
+                    </div>
+
+                    <div class="service__card">
+                        <div class="service__icon">
+                            <i class="ri-building-line"></i>
+                        </div>
+                        <h4>Employer Branding</h4>
+                        <p class="service__description">Enhance your company's visibility and attract top talent with professional employer branding services.</p>
+                        <div class="service__features">
+                            <span class="feature__tag"><i class="ri-check-line"></i>Company profile optimization</span>
+                            <span class="feature__tag"><i class="ri-check-line"></i>Branded job postings</span>
+                            <span class="feature__tag"><i class="ri-check-line"></i>Career page integration</span>
+                            <span class="feature__tag"><i class="ri-check-line"></i>Social media presence</span>
+                        </div>
+                    </div>
+
+                    <div class="service__card">
+                        <div class="service__icon">
+                            <i class="ri-file-list-line"></i>
+                        </div>
+                        <h4>Job Posting Management</h4>
+                        <p class="service__description">Streamlined job posting process with advanced features to reach the right candidates effectively.</p>
+                        <div class="service__features">
+                            <span class="feature__tag"><i class="ri-check-line"></i>Easy job posting</span>
+                            <span class="feature__tag"><i class="ri-check-line"></i>Multiple posting packages</span>
+                            <span class="feature__tag"><i class="ri-check-line"></i>Application tracking</span>
+                            <span class="feature__tag"><i class="ri-check-line"></i>Interview scheduling</span>
+                        </div>
+                    </div>
+
+                    <div class="service__card">
+                        <div class="service__icon">
+                            <i class="ri-bar-chart-line"></i>
+                        </div>
+                        <h4>Recruitment Analytics</h4>
+                        <p class="service__description">Comprehensive analytics and insights to optimize your hiring process and make data-driven decisions.</p>
+                        <div class="service__features">
+                            <span class="feature__tag"><i class="ri-check-line"></i>Hiring metrics</span>
+                            <span class="feature__tag"><i class="ri-check-line"></i>Candidate source tracking</span>
+                            <span class="feature__tag"><i class="ri-check-line"></i>Time-to-hire analysis</span>
+                            <span class="feature__tag"><i class="ri-check-line"></i>ROI reporting</span>
+                        </div>
+                    </div>
+
+                    <div class="service__card">
+                        <div class="service__icon">
+                            <i class="ri-customer-service-2-line"></i>
+                        </div>
+                        <h4>Dedicated Support</h4>
+                        <p class="service__description">Get personalized support from our recruitment experts to ensure successful hiring outcomes.</p>
+                        <div class="service__features">
+                            <span class="feature__tag"><i class="ri-check-line"></i>Account manager</span>
+                            <span class="feature__tag"><i class="ri-check-line"></i>24/7 support</span>
+                            <span class="feature__tag"><i class="ri-check-line"></i>Hiring consultation</span>
+                            <span class="feature__tag"><i class="ri-check-line"></i>Best practices guidance</span>
+                        </div>
+                    </div>
+
+                    <div class="service__card">
+                        <div class="service__icon">
+                            <i class="ri-shield-check-line"></i>
+                        </div>
+                        <h4>Compliance & Security</h4>
+                        <p class="service__description">Ensure your hiring process complies with all regulations while maintaining data security and privacy.</p>
+                        <div class="service__features">
+                            <span class="feature__tag"><i class="ri-check-line"></i>GDPR compliance</span>
+                            <span class="feature__tag"><i class="ri-check-line"></i>Data security</span>
+                            <span class="feature__tag"><i class="ri-check-line"></i>Background verification</span>
+                            <span class="feature__tag"><i class="ri-check-line"></i>Legal compliance</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- <div class="client__pricing">
+                <h3>Choose Your Plan</h3>
+                <div class="pricing__grid">
+                    <div class="pricing__card">
+                        <h4>Starter</h4>
+                        <div class="pricing__price">
+                            <span class="price">Free</span>
+                        </div>
+                        <p class="pricing__description">Perfect for small businesses</p>
+                        <div class="pricing__features">
+                            <div class="feature__item">
+                                <i class="ri-check-line"></i>
+                                <span>Up to 3 job postings</span>
+                            </div>
+                            <div class="feature__item">
+                                <i class="ri-check-line"></i>
+                                <span>Basic candidate matching</span>
+                            </div>
+                            <div class="feature__item">
+                                <i class="ri-check-line"></i>
+                                <span>Email support</span>
+                            </div>
+                            <div class="feature__item">
+                                <i class="ri-check-line"></i>
+                                <span>Standard company profile</span>
+                            </div>
+                        </div>
+                        <button class="pricing__btn btn btn__secondary">Get Started</button>
+                    </div>
+
+                    <div class="pricing__card recommended">
+                        <div class="recommended__badge">Most Popular</div>
+                        <h4>Professional</h4>
+                        <div class="pricing__price">
+                            <span class="price">₹2,999</span>
+                            <span class="period">/month</span>
+                        </div>
+                        <p class="pricing__description">For growing companies</p>
+                        <div class="pricing__features">
+                            <div class="feature__item">
+                                <i class="ri-check-line"></i>
+                                <span>Up to 25 job postings</span>
+                            </div>
+                            <div class="feature__item">
+                                <i class="ri-check-line"></i>
+                                <span>Advanced candidate matching</span>
+                            </div>
+                            <div class="feature__item">
+                                <i class="ri-check-line"></i>
+                                <span>Priority support</span>
+                            </div>
+                            <div class="feature__item">
+                                <i class="ri-check-line"></i>
+                                <span>Enhanced company profile</span>
+                            </div>
+                            <div class="feature__item">
+                                <i class="ri-check-line"></i>
+                                <span>Application tracking</span>
+                            </div>
+                            <div class="feature__item">
+                                <i class="ri-check-line"></i>
+                                <span>Interview scheduling</span>
+                            </div>
+                        </div>
+                        <button class="pricing__btn btn">Get Started</button>
+                    </div>
+
+                    <div class="pricing__card">
+                        <h4>Enterprise</h4>
+                        <div class="pricing__price">
+                            <span class="price">₹9,999</span>
+                            <span class="period">/month</span>
+                        </div>
+                        <p class="pricing__description">For large organizations</p>
+                        <div class="pricing__features">
+                            <div class="feature__item">
+                                <i class="ri-check-line"></i>
+                                <span>Unlimited job postings</span>
+                            </div>
+                            <div class="feature__item">
+                                <i class="ri-check-line"></i>
+                                <span>Premium candidate matching</span>
+                            </div>
+                            <div class="feature__item">
+                                <i class="ri-check-line"></i>
+                                <span>Dedicated account manager</span>
+                            </div>
+                            <div class="feature__item">
+                                <i class="ri-check-line"></i>
+                                <span>Custom company branding</span>
+                            </div>
+                            <div class="feature__item">
+                                <i class="ri-check-line"></i>
+                                <span>Advanced analytics</span>
+                            </div>
+                            <div class="feature__item">
+                                <i class="ri-check-line"></i>
+                                <span>API access</span>
+                            </div>
+                            <div class="feature__item">
+                                <i class="ri-check-line"></i>
+                                <span>Bulk hiring tools</span>
+                            </div>
+                        </div>
+                        <button class="pricing__btn btn btn__secondary">Get Started</button>
+                    </div>
+                </div>
+            </div> -->
+
+            <div class="client__success">
+                <h2 class="section__header">Success <span>Stories</span> </h2>
+                <div class="success__grid">
+                    <div class="success__card">
+                        <div class="success__header">
+                            <h5>TechCorp India</h5>
+                            <span class="success__industry">Technology</span>
+                        </div>
+                        <div class="success__stats">
+                            <span class="hires__count">150+ hires</span>
+                        </div>
+                        <p class="success__testimonial">"GrowwYou helped us find exceptional talent quickly. The quality of candidates exceeded our expectations."</p>
+                    </div>
+                    <div class="success__card">
+                        <div class="success__header">
+                            <h5>Manufacturing Plus</h5>
+                            <span class="success__industry">Manufacturing</span>
+                        </div>
+                        <div class="success__stats">
+                            <span class="hires__count">75+ hires</span>
+                        </div>
+                        <p class="success__testimonial">"The platform made our hiring process efficient and cost-effective. Highly recommended for any business."</p>
+                    </div>
+                    <div class="success__card">
+                        <div class="success__header">
+                            <h5>Retail Solutions</h5>
+                            <span class="success__industry">Retail</span>
+                        </div>
+                        <div class="success__stats">
+                            <span class="hires__count">200+ hires</span>
+                        </div>
+                        <p class="success__testimonial">"Outstanding service and results. We filled all our positions within weeks of posting."</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="client__cta">
+                <div class="cta__content">
+                    <h3>Ready to Find Your Next Great Hire?</h3>
+                    <p>
+                        Join thousands of companies that trust GrowwYou to find their perfect candidates.
+                        Start posting jobs today and connect with top talent across India.
+                    </p>
+                    <div class="cta__buttons">
+                        <a href="#"><button class="btn">Post a Job</button></a>
+                        <a href="about.html"><button class="btn btn__secondary">Learn More</button></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="section__container footer__container">
+            <div class="footer__col">
+                <div class="footer__logo">
+                    <a href="index.html" class="logo">Groww<span>You</span></a>
+                </div>
+                <p>
+                    Your trusted partner in finding the perfect job. We connect talented
+                    individuals with top employers across various industries.
+                </p>
+                 <img src="img/gu.png" width="70%">
+            </div>
+            <div class="footer__col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="jobs.html">Jobs</a></li>
+                    <li><a href="service.html">Services</a></li>
+                    <li><a href="client.html">For Employers</a></li>
+                </ul>
+            </div>
+            <div class="footer__col">
+                <h4>Resources</h4>
+                <ul>
+                    <li><a href="#">Career Advice</a></li>
+                    <li><a href="#">Resume Tips</a></li>
+                    <li><a href="#">Interview Guide</a></li>
+                    <li><a href="#">Salary Guide</a></li>
+                </ul>
+            </div>
+            <div class="footer__col">
+                <h4>Contact Us</h4>
+                <ul>
+                    <li><a href="https://www.growwyou.com/">www.growwyou.com</a></li>
+                    <li><a href="tel:+919084734249">+91 9084734249 / 9084734294</a></li>
+                    <li><a>Address - Shop No. 4 & 5, 2nd Floor, Block No: C-14, Cloth Market, Sanjay Place, Near AU Small Finance Bank, Agra, Uttar Pradesh – 282002, India</a></li>
+                </ul>
+                <div class="footer__socials">
+                    <a href="https://www.facebook.com/growwyouitsolutions"><i class="ri-facebook-fill"></i></a>
+                    <a href="https://www.linkedin.com/company/growwyou-itsolutions-digitalmarketing-institute"><i class="ri-linkedin-fill"></i></a>
+                    <a href="https://www.instagram.com/growwyou_"><i class="ri-instagram-line"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer__bar">
+            Copyright © 2025 GrowwYou. All rights reserved.
+        </div>
+    </footer>
+
+    <script src="js/api.js"></script>
+    <script src="js/forms.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

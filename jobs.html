@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jobs - GrowwYou Job Portal</title>
+    <link rel="shortcut icon" href="img/grwu.svg" type="image/x-icon">
+
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav>
+        <div class="nav__container">
+            <div class="nav__logos">
+                <a href="index.html" class="logos">Groww<span>You</span></a>
+            </div>
+            <div class="nav__menu__btn" onclick="toggleMenu()">
+                <i class="ri-menu-line"></i>
+            </div>
+            <div class="nav__backdrop" id="navBackdrop" onclick="toggleMenu()"></div>
+            <ul class="nav__links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="jobs.html">Jobs</a></li>
+                <li><a href="service.html">Services</a></li>
+                <li><a href="client.html">Client</a></li>
+                <li class="profile-menu">
+                    <a href="#" class="profile-trigger" id="profileTrigger">
+                        <i class="ri-user-line"></i>
+                        <span id="profileName">Account</span>
+                        <i class="ri-arrow-down-s-line"></i>
+                    </a>
+                    <div class="profile-dropdown" id="profileDropdown">
+                        <div class="profile-info" id="profileInfo" style="display: none;">
+                            <p class="profile-username" id="dropdownUsername"></p>
+                            <p class="profile-email" id="dropdownEmail"></p>
+                        </div>
+                        <a href="login.html" id="loginLink" class="dropdown-item">
+                            <i class="ri-login-box-line"></i> Login
+                        </a>
+                        <a href="#" id="logoutLink" class="dropdown-item" style="display: none;">
+                            <i class="ri-logout-box-line"></i> Logout
+                        </a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Jobs Section -->
+    <section class="section__container job__container" id="jobs">
+        <h2 class="section__header" style="margin-top:20px;">Latest & Top <span>Job Openings</span></h2>
+        <p class="section__description">
+            Discover Exciting New Opportunities and High-Demand Positions Available
+            Now in Top Industries and Companies
+        </p>
+        <a href="login.html">
+        <div class="job__grid" id="jobGrid">
+            <!-- Jobs will be loaded dynamically -->
+        </div>
+        </a>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="section__container footer__container">
+            <div class="footer__col">
+                <div class="footer__logo">
+                    <a href="index.html" class="logo">Groww<span>You</span></a>
+                </div>
+                <p>
+                    Your trusted partner in finding the perfect job. We connect talented
+                    individuals with top employers across various industries.
+                </p>
+                 <img src="img/gu.png" width="70%">
+            </div>
+            <div class="footer__col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="jobs.html">Jobs</a></li>
+                    <li><a href="service.html">Services</a></li>
+                    <li><a href="client.html">For Employers</a></li>
+                </ul>
+            </div>
+            <div class="footer__col">
+                <h4>Resources</h4>
+                <ul>
+                    <li><a href="#">Career Advice</a></li>
+                    <li><a href="#">Resume Tips</a></li>
+                    <li><a href="#">Interview Guide</a></li>
+                    <li><a href="#">Salary Guide</a></li>
+                </ul>
+            </div>
+            <div class="footer__col">
+                <h4>Contact Us</h4>
+                <ul>
+                    <li><a href="https://www.growwyou.com/">www.growwyou.com</a></li>
+                    <li><a href="tel:+919084734249">+91 9084734249 / 9084734294</a></li>
+                    <li><a>Address - Shop No. 4 & 5, 2nd Floor, Block No: C-14, Cloth Market, Sanjay Place, Near AU Small Finance Bank, Agra, Uttar Pradesh – 282002, India</a></li>
+                </ul>
+                <div class="footer__socials">
+                    <a href="https://www.facebook.com/growwyouitsolutions"><i class="ri-facebook-fill"></i></a>
+                    <a href="https://www.linkedin.com/company/growwyou-itsolutions-digitalmarketing-institute"><i class="ri-linkedin-fill"></i></a>
+                    <a href="https://www.instagram.com/growwyou_"><i class="ri-instagram-line"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer__bar">
+            Copyright © 2025 GrowwYou. All rights reserved.
+        </div>
+    </footer>
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/forms.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

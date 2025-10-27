@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GrowwYou Job Portal</title>
+    <link rel="shortcut icon" href="img/grwu.svg" type="image/x-icon">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+</head>
+<body>
+    <!-- Navbar -->
+     <nav>
+        <div class="nav__container">
+            <div class="nav__logos">
+                <a href="index.html" class="logos">Groww<span>You</span></a>
+            </div>
+            <div class="nav__menu__btn" onclick="toggleMenu()">
+                <i class="ri-menu-line"></i>
+            </div>
+            <div class="nav__backdrop" id="navBackdrop" onclick="toggleMenu()"></div>
+            <ul class="nav__links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="jobs.html">Jobs</a></li>
+                <li><a href="service.html">Services</a></li>
+                <li><a href="client.html">Client</a></li>
+                <li class="profile-menu">
+                    <a href="#" class="profile-trigger" id="profileTrigger">
+                        <i class="ri-user-line"></i>
+                        <span id="profileName">Account</span>
+                        <i class="ri-arrow-down-s-line"></i>
+                    </a>
+                    <div class="profile-dropdown" id="profileDropdown">
+                        <div class="profile-info" id="profileInfo" style="display: none;">
+                            <p class="profile-username" id="dropdownUsername"></p>
+                            <p class="profile-email" id="dropdownEmail"></p>
+                        </div>
+                        <a href="login.html" id="loginLink" class="dropdown-item">
+                            <i class="ri-login-box-line"></i> Login
+                        </a>
+                        <a href="#" id="logoutLink" class="dropdown-item" style="display: none;">
+                            <i class="ri-logout-box-line"></i> Logout
+                        </a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav> 
+      
+
+    <!-- Header -->
+    <header class="header__container" id="home">
+        <div class="header__content">
+            <div class="header__badge">INDIA'S #1</div>
+            <h1>Search, Apply & Get Your Dream Job</h1>
+            <p>
+                Part-time, Full-time, Onsite, and Remote work opportunities!
+            </p>
+            <div class="header__btns">
+                <div class="btn__group">
+                    <span class="btn__label">FOR JOBS</span>
+                    <a href="jobs.html"><button class="btn">Explore Jobs</button></a>
+                </div>
+                <div class="btn__group">
+                    <span class="btn__label">FOR BUSINESS</span>
+                    <a href="service.html"><button class="btn btn__secondary">Explore Solutions</button></a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Marquee -->
+    <div class="marquee">
+        <div class="marquee__content">
+            <img src="img/google.png" alt="Google">
+            <img src="img/amazon.png" alt="Amazon">
+            <img src="img/microsoft.png" alt="Microsoft">
+            <img src="img/linkedin.png" alt="LinkedIn">
+            <img src="img/figma.png" alt="Figma">
+            <img src="img/google.png" alt="Google">
+            <img src="img/amazon.png" alt="Amazon">
+            <img src="img/microsoft.png" alt="Microsoft">
+            <img src="img/linkedin.png" alt="LinkedIn">
+            <img src="img/figma.png" alt="Figma">
+            <img src="img/google.png" alt="Google">
+            <img src="img/amazon.png" alt="Amazon">
+            <img src="img/microsoft.png" alt="Microsoft">
+            <img src="img/linkedin.png" alt="LinkedIn">
+            <img src="img/figma.png" alt="Figma">
+        </div>
+    </div>
+
+    <!-- Explore -->
+    <section class="section__container explore__container" id="explore">
+        <h2 class="section__header">Explore By <span>Category</span></h2>
+        <p class="section__description">
+            Browse Through Various Job Categories to Find Opportunities That Match
+            Your Skills and Interests
+        </p>
+        <div class="explore__grid">
+            <div class="explore__card">
+                <span><i class="ri-code-s-slash-line"></i></span>
+                <h4>Technology</h4>
+            </div>
+            <div class="explore__card">
+                <span><i class="ri-palette-line"></i></span>
+                <h4>Design</h4>
+            </div>
+            <div class="explore__card">
+                <span><i class="ri-megaphone-line"></i></span>
+                <h4>Marketing</h4>
+            </div>
+        </div>
+    </section>
+
+    <!-- Jobs -->
+    
+    <section class="section__container job__container" id="jobs">
+        <h2 class="section__header">Latest & Top<span> Job Openings</span></h2>
+        <p class="section__description">
+            Discover Exciting New Opportunities and High-Demand Positions Available
+            Now in Top Industries and Companies
+        </p>
+        <div class="job__grid" id="jobGrid">
+            <!-- Jobs will be loaded dynamically from backend API -->
+            <!-- <div class="job__card">
+     <h2 class="job-title">Sales Executive</h2>
+    <p><strong>Location :</strong> Agra</p>
+    <p><strong>Salary :</strong> 10k – 14k/Months</p>
+    <p><strong>Qualification :</strong> 12 and Graduate pass and Others</p>
+    <p><strong>Experience :</strong> Fresher / 1 year</p>
+    <p><strong>Key Skills :</strong> Communication, Teamwork, confidence</p>
+</div>  
+
+             
+                   <div class="job__card">
+      <h2 class="job-title">Telecaller</h2>
+      <p><strong>Location :</strong> Agra</p>
+      <p><strong>Salary :</strong> 10k - 12k/Months</p>
+      <p><strong>Qualification :</strong> 12 pass , BA , BBA and Others</p>
+      <p><strong>Experience :</strong> Fresher / 1 year</p>
+      <p><strong>Key Skills :</strong> Communication, Teamwork, Problem solving</p>
+    </div>
+
+    <div class="job__card">
+      <h2 class="job-title">Electronic Engineer</h2>
+      <p><strong>Location :</strong> Delhi NCR</p>
+      <p><strong>Salary :</strong> 25k - 30k/Months</p>
+      <p><strong>Qualification :</strong> Diploma , B.Tech, ITI</p>
+      <p><strong>Experience :</strong> Fresher / Experience</p>
+      <p><strong>Key Skills :</strong> Adaptability, Problem Solving, Critical Thinking & Creativity & Innovation and Other</p>
+    </div>
+
+    <div class="job__card">
+      <h2 class="job-title">Operator & Executive</h2>
+      <p><strong>Location :</strong> Noida</p>
+      <p><strong>Salary :</strong> 18,000 – ₹25,000 / Month</p>
+      <p><strong>Qualification :</strong> 10th, 12th, Graduation and Others</p>
+      <p><strong>Experience :</strong> 0 – 5 Year</p>
+      <p><strong>Key Skills :</strong> Production, Teamwork, Discipline and Others</p>
+    </div>
+
+    <div class="job__card">
+      <h2 class="job-title">Mechanical Engineer</h2>
+      <p><strong>Location :</strong> Agra</p>
+      <p><strong>Salary :</strong> 25k - 30k/Months</p>
+      <p><strong>Qualification :</strong> B.Tech , Diploma , ITI</p>
+      <p><strong>Experience :</strong> Fresher / Experience</p>
+      <p><strong>Key Skills :</strong> Adaptability, Problem Solving, Critical Thinking & Creativity & Innovation and Others</p>
+    </div>
+
+    <div class="job__card">
+      <h2 class="job-title">Electrical Engineer</h2>
+      <p><strong>Location :</strong> Delhi NCR</p>
+      <p><strong>Salary :</strong> 25k - 30k/Months</p>
+      <p><strong>Qualification :</strong> B.Tech, diploma, ITI</p>
+      <p><strong>Experience :</strong> Fresher / Experience</p>
+      <p><strong>Key Skills :</strong> Adaptability, Problem Solving, Critical Thinking & Creativity & Innovation and Others</p>
+    </div> -->
+        </div>
+    </section>
+  
+
+    <!-- Offer -->
+    <section class="section__container offer__container">
+        <h2 class="section__header">What We <span>Offer</span></h2>
+        <p class="section__description">
+            Explore the Benefits and Services We Provide to Enhance Your Job Search
+            and Career Success
+        </p>
+        
+        <div class="offer__grid">
+           
+            <div class="offer__card">
+                <img src="img/offer-1.jpg" alt="Job Recommendation">
+                <div class="offer__details">
+                    <span>01</span>
+                    <div>
+                        <h4>Job Recommendation</h4>
+                        <p>Personalized job matches tailored to your skills and preferences</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="offer__card">
+                <img src="img/offer-2.jpg" alt="Create & Build Portfolio">
+                <div class="offer__details">
+                    <span>02</span>
+                    <div>
+                        <h4>Create & Build Portfolio</h4>
+                        <p>Showcase your expertise with professional portfolio design</p>
+                    </div>
+                </div>
+            </div>
+            <div class="offer__card">
+                <img src="img/offer-3.jpg" alt="Career Consultation">
+                <div class="offer__details">
+                    <span>03</span>
+                    <div>
+                        <h4>Career Consultation</h4>
+                        <p>Receive expert advice to navigate your career path</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Steps -->
+    <section class="section__container steps__container aero">
+        <h2 class="section__header">How It <span>Works</span></h2>
+        <p class="section__description">
+            Follow These Simple Steps to Find Your Perfect Job and Start Your Career
+            Journey Today
+        </p>
+        <div class="steps__grid">
+            <div class="steps__card">
+                <span><i class="ri-user-add-line"></i></span>
+                <h4>Create Account</h4>
+                <p>Sign up and build your professional profile</p>
+            </div>
+            <div class="steps__card">
+                <span><i class="ri-search-line"></i></span>
+                <h4>Search Jobs</h4>
+                <p>Browse thousands of job opportunities</p>
+            </div>
+            <div class="steps__card">
+                <span><i class="ri-file-text-line"></i></span>
+                <h4>Apply</h4>
+                <p>Submit your application with one click</p>
+            </div>
+            <div class="steps__card">
+                <span><i class="ri-briefcase-line"></i></span>
+                <h4>Get Hired</h4>
+                <p>Start your dream career journey</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="section__container client__container" id="client">
+        <h2 class="section__header">What Our <span>Client Say</span></h2>
+        <p class="section__description">
+            Read Testimonials and Success Stories from Our Satisfied Job Seekers and
+            Employers to See How We Make a Difference
+        </p>
+        <div class="swiper testimonials-swiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div class="client__card">
+                        <p>Searching for a job can be overwhelming, but this platform made it simple and efficient. I uploaded my resume, applied to a few positions, and soon enough, I was hired Thanks GrowwYou </p>
+                        <div class="client__ratings">
+                            <span><i class="ri-star-fill"></i></span>
+                            <span><i class="ri-star-fill"></i></span>
+                            <span><i class="ri-star-fill"></i></span>
+                            <span><i class="ri-star-fill"></i></span>
+                            <span><i class="ri-star-fill"></i></span>
+                        </div>
+                        <h4>Anuj Kushwah</h4>
+                        <h5>Graphic Designer</h5>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="client__card">
+                        <p>As a recent graduate, I was unsure where to start my job search. This website guided me through the process step by step. From creating my profile to receiving job offers, everything was seamless. </p>
+                        <div class="client__ratings">
+                            <span><i class="ri-star-fill"></i></span>
+                            <span><i class="ri-star-fill"></i></span>
+                            <span><i class="ri-star-fill"></i></span>
+                            <span><i class="ri-star-fill"></i></span>
+                            <span><i class="ri-star-half-fill"></i></span>
+                        </div>
+                        <h4>Parvesh</h4>
+                        <h5>Recent Graduate</h5>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="client__card">
+                        <p>Creating an account was a breeze, and I was amazed by the number of job opportunities available. Thanks to this website, I found the perfect position that aligned perfectly with my career goals.</p>
+                        <div class="client__ratings">
+                            <span><i class="ri-star-fill"></i></span>
+                            <span><i class="ri-star-fill"></i></span>
+                            <span><i class="ri-star-fill"></i></span>
+                            <span><i class="ri-star-fill"></i></span>
+                            <span><i class="ri-star-fill"></i></span>
+                        </div>
+                        <h4>Gautam</h4>
+                        <h5>Software Engineer</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="section__container footer__container">
+            <div class="footer__col">
+                <div class="footer__logo">
+                    <a href="index.html" class="logo">Groww<span>You</span></a>
+                </div>
+                <p>
+                    Your trusted partner in finding the perfect job. We connect talented
+                    individuals with top employers across various industries.
+                </p>
+                <img src="img/gu.png" width="70%">
+            </div>
+            <div class="footer__col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="jobs.html">Jobs</a></li>
+                    <li><a href="service.html">Services</a></li>
+                    <li><a href="client.html">For Employers</a></li>
+                </ul>
+            </div>
+            <div class="footer__col">
+                <h4>Resources</h4>
+                <ul>
+                    <li><a href="index.html">Career Advice</a></li>
+                    <li><a href="index.html">Resume Tips</a></li>
+                    <li><a href="index.html">Interview Guide</a></li>
+                    <li><a href="index.html">Salary Guide</a></li>
+                </ul>
+            </div>
+            <div class="footer__col">
+                <h4>Contact Us</h4>
+                <ul>
+                    <li><a href="https://www.growwyou.com/">www.growwyou.com</a></li>
+                    <li><a href="tel:+919084734249">+91 9084734249 / 9084734294</a></li>
+                    <li><a>Address - Shop No. 4 & 5, 2nd Floor, Block No: C-14, Cloth Market, Sanjay Place, Near AU Small Finance Bank, Agra, Uttar Pradesh – 282002, India</a></li>
+                </ul>
+                <div class="footer__socials">
+                    <a href="https://www.facebook.com/growwyouitsolutions"><i class="ri-facebook-fill"></i></a>
+                    <a href="https://www.linkedin.com/company/growwyou-itsolutions-digitalmarketing-institute"><i class="ri-linkedin-fill"></i></a>
+                    <a href="https://www.instagram.com/growwyou_"><i class="ri-instagram-line"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer__bar">
+            Copyright © 2025 GrowwYou. All rights reserved.
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/forms.js"></script>
+    <script src="app.js"></script>
+  
+</body>
+</html>

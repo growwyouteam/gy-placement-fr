@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services - GrowwYou Job Portal</title>
+    <link rel="shortcut icon" href="img/grwu.svg" type="image/x-icon">
+
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav>
+        <div class="nav__container">
+            <div class="nav__logos">
+                <a href="index.html" class="logos">Groww<span>You</span></a>
+            </div>
+            <div class="nav__menu__btn" onclick="toggleMenu()">
+                <i class="ri-menu-line"></i>
+            </div>
+            <div class="nav__backdrop" id="navBackdrop" onclick="toggleMenu()"></div>
+            <ul class="nav__links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="jobs.html">Jobs</a></li>
+                <li><a href="service.html">Services</a></li>
+                <li><a href="client.html">Client</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Service Section -->
+    <section class="section__container service__container" id="service">
+        <div class="service__header">
+            <h2 class="section__header">Our <span>Services</span></h2>
+            <p class="section__description">
+                Comprehensive job search and career development services designed to help you
+                find and land your dream job with ease and confidence.
+            </p>
+        </div>
+
+        <div class="service__content">
+            <div class="service__grid">
+                <div class="service__card">
+                    <div class="service__icon">
+                        <i class="ri-briefcase-line"></i>
+                    </div>
+                    <h3>Job Search & Matching</h3>
+                    <p class="service__description">Advanced AI-powered job matching algorithm that connects you with the perfect opportunities based on your skills, experience, and preferences.</p>
+                    <div class="service__features">
+                        <span class="feature__tag"><i class="ri-check-line"></i>Smart job recommendations</span>
+                        <span class="feature__tag"><i class="ri-check-line"></i>Advanced filters</span>
+                        <span class="feature__tag"><i class="ri-check-line"></i>Skill-based matching</span>
+                        <span class="feature__tag"><i class="ri-check-line"></i>Real-time notifications</span>
+                    </div>
+                </div>
+
+                <div class="service__card">
+                    <div class="service__icon">
+                        <i class="ri-user-line"></i>
+                    </div>
+                    <h3>Profile & Portfolio Building</h3>
+                    <p class="service__description">Create professional profiles and portfolios that showcase your skills and experience to potential employers effectively.</p>
+                    <div class="service__features">
+                        <span class="feature__tag"><i class="ri-check-line"></i>Professional templates</span>
+                        <span class="feature__tag"><i class="ri-check-line"></i>Portfolio showcase</span>
+                        <span class="feature__tag"><i class="ri-check-line"></i>Skill assessments</span>
+                        <span class="feature__tag"><i class="ri-check-line"></i>Resume optimization</span>
+                    </div>
+                </div>
+
+                <div class="service__card">
+                    <div class="service__icon">
+                        <i class="ri-building-line"></i>
+                    </div>
+                    <h3>Company Connections</h3>
+                    <p class="service__description">Direct access to verified companies and employers across various industries with streamlined application processes.</p>
+                    <div class="service__features">
+                        <span class="feature__tag"><i class="ri-check-line"></i>Verified employers</span>
+                        <span class="feature__tag"><i class="ri-check-line"></i>Direct applications</span>
+                        <span class="feature__tag"><i class="ri-check-line"></i>Company profiles</span>
+                        <span class="feature__tag"><i class="ri-check-line"></i>Industry insights</span>
+                    </div>
+                </div>
+
+                <div class="service__card">
+                    <div class="service__icon">
+                        <i class="ri-graduation-cap-line"></i>
+                    </div>
+                    <h3>Career Development</h3>
+                    <p class="service__description">Comprehensive career guidance and skill development resources to help you grow professionally throughout your journey.</p>
+                    <div class="service__features">
+                        <span class="feature__tag"><i class="ri-check-line"></i>Career counseling</span>
+                        <span class="feature__tag"><i class="ri-check-line"></i>Skill training</span>
+                        <span class="feature__tag"><i class="ri-check-line"></i>Interview preparation</span>
+                        <span class="feature__tag"><i class="ri-check-line"></i>Growth tracking</span>
+                    </div>
+                </div>
+
+                <div class="service__card">
+                    <div class="service__icon">
+                        <i class="ri-shield-check-line"></i>
+                    </div>
+                    <h3>Verified Opportunities</h3>
+                    <p class="service__description">All job postings are thoroughly verified and legitimate opportunities from trusted employers and companies.</p>
+                    <div class="service__features">
+                        <span class="feature__tag"><i class="ri-check-line"></i>Background verification</span>
+                        <span class="feature__tag"><i class="ri-check-line"></i>Legitimate postings</span>
+                        <span class="feature__tag"><i class="ri-check-line"></i>Fraud protection</span>
+                        <span class="feature__tag"><i class="ri-check-line"></i>Quality assurance</span>
+                    </div>
+                </div>
+
+                <div class="service__card">
+                    <div class="service__icon">
+                        <i class="ri-customer-service-2-line"></i>
+                    </div>
+                    <h3>24/7 Support</h3>
+                    <p class="service__description">Round-the-clock customer support to assist you with any queries, technical issues, or guidance you may need.</p>
+                    <div class="service__features">
+                        <span class="feature__tag"><i class="ri-check-line"></i>Live chat support</span>
+                        <span class="feature__tag"><i class="ri-check-line"></i>Email assistance</span>
+                        <span class="feature__tag"><i class="ri-check-line"></i>Phone support</span>
+                        <span class="feature__tag"><i class="ri-check-line"></i>FAQ resources</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="service__process">
+                <h2 class="section__header">How <span>It Works</span></h2>
+                <div class="process__grid">
+                    <div class="process__card">
+                        <span class="process__step">01</span>
+                        <h4>Create Profile</h4>
+                        <p>Build your professional profile with skills, experience, and preferences</p>
+                    </div>
+                    <div class="process__card">
+                        <span class="process__step">02</span>
+                        <h4>Get Matched</h4>
+                        <p>Our AI algorithm finds the best job opportunities tailored for you</p>
+                    </div>
+                    <div class="process__card">
+                        <span class="process__step">03</span>
+                        <h4>Apply & Connect</h4>
+                        <p>Apply directly to verified companies with one-click applications</p>
+                    </div>
+                    <div class="process__card">
+                        <span class="process__step">04</span>
+                        <h4>Land Your Dream Job</h4>
+                        <p>Receive offers and start your new career journey with confidence</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="service__benefits">
+                <h2 class="section__header">Why <span>Choose Our Platform</span></h3>
+                <div class="benefits__grid">
+                    <div class="benefit__card">
+                        <div class="benefit__icon">
+                            <i class="ri-time-line"></i>
+                        </div>
+                        <h4>Save Time</h4>
+                        <p>Find relevant opportunities quickly with our smart matching system</p>
+                    </div>
+                    <div class="benefit__card">
+                        <div class="benefit__icon">
+                            <i class="ri-shield-line"></i>
+                        </div>
+                        <h4>Secure & Safe</h4>
+                        <p>Your data is protected with enterprise-grade security measures</p>
+                    </div>
+                    <div class="benefit__card">
+                        <div class="benefit__icon">
+                            <i class="ri-global-line"></i>
+                        </div>
+                        <h4>Nationwide Reach</h4>
+                        <p>Access opportunities from companies across all Indian cities</p>
+                    </div>
+                    <div class="benefit__card">
+                        <div class="benefit__icon">
+                            <i class="ri-money-dollar-circle-line"></i>
+                        </div>
+                        <h4>Free to Use</h4>
+                        <p>All our services are completely free for job seekers</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="service__cta">
+                <div class="cta__content">
+                    <h3>Ready to Start Your Journey?</h3>
+                    <p>
+                        Join thousands of successful job seekers who have found their dream careers
+                        through our platform. Create your profile today and unlock endless opportunities.
+                    </p>
+                    <div class="cta__buttons">
+                        <a href="jobs.html"><button class="btn">Get Started</button></a>
+                        <a href="about.html"><button class="btn btn__secondary">Learn More</button></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="section__container footer__container">
+            <div class="footer__col">
+                <div class="footer__logo">
+                    <a href="index.html" class="logo">Groww<span>You</span></a>
+                </div>
+                <p>
+                    Your trusted partner in finding the perfect job. We connect talented
+                    individuals with top employers across various industries.
+                </p>
+                 <img src="img/gu.png" width="70%">
+            </div>
+            <div class="footer__col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="jobs.html">Jobs</a></li>
+                    <li><a href="service.html">Services</a></li>
+                    <li><a href="client.html">For Employers</a></li>
+                </ul>
+            </div>
+            <div class="footer__col">
+                <h4>Resources</h4>
+                <ul>
+                    <li><a href="#">Career Advice</a></li>
+                    <li><a href="#">Resume Tips</a></li>
+                    <li><a href="#">Interview Guide</a></li>
+                    <li><a href="#">Salary Guide</a></li>
+                </ul>
+            </div>
+            <div class="footer__col">
+                <h4>Contact Us</h4>
+                <ul>
+                    <li><a href="https://www.growwyou.com/">www.growwyou.com</a></li>
+                    <li><a href="tel:+919084734249">+91 9084734249 / 9084734294</a></li>
+                    <li><a>Address - Shop No. 4 & 5, 2nd Floor, Block No: C-14, Cloth Market, Sanjay Place, Near AU Small Finance Bank, Agra, Uttar Pradesh – 282002, India</a></li>
+                </ul>
+                <div class="footer__socials">
+                    <a href="https://www.facebook.com/growwyouitsolutions"><i class="ri-facebook-fill"></i></a>
+                    <a href="https://www.linkedin.com/company/growwyou-itsolutions-digitalmarketing-institute"><i class="ri-linkedin-fill"></i></a>
+                    <a href="https://www.instagram.com/growwyou_"><i class="ri-instagram-line"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer__bar">
+            Copyright © 2025 GrowwYou. All rights reserved.
+        </div>
+    </footer>
+
+    <script src="js/api.js"></script>
+    <script src="js/forms.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

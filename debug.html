@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Debug - API Connection Test</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+        h1 {
+            color: #667eea;
+            margin-bottom: 10px;
+            font-size: 2.5em;
+        }
+        .subtitle {
+            color: #666;
+            margin-bottom: 30px;
+        }
+        .test-section {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 12px;
+            margin: 20px 0;
+            border-left: 5px solid #667eea;
+        }
+        .test-section h2 {
+            color: #333;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+        button {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 600;
+            transition: transform 0.2s, box-shadow 0.2s;
+            margin: 5px;
+        }
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+        button:active {
+            transform: translateY(0);
+        }
+        .result {
+            margin-top: 15px;
+            padding: 15px;
+            border-radius: 8px;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+        }
+        .success {
+            background: #d1fae5;
+            border: 2px solid #10b981;
+            color: #065f46;
+        }
+        .error {
+            background: #fee2e2;
+            border: 2px solid #ef4444;
+            color: #991b1b;
+        }
+        .info {
+            background: #dbeafe;
+            border: 2px solid #3b82f6;
+            color: #1e40af;
+        }
+        pre {
+            background: #1e293b;
+            color: #e2e8f0;
+            padding: 15px;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin-top: 10px;
+            font-size: 13px;
+        }
+        .status-badge {
+            display: inline-block;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+            margin-left: 10px;
+        }
+        .status-online {
+            background: #10b981;
+            color: white;
+        }
+        .status-offline {
+            background: #ef4444;
+            color: white;
+        }
+        .loading {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid #f3f3f3;
+            border-top: 3px solid #667eea;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin-left: 10px;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        .step-list {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 15px;
+        }
+        .step-list li {
+            margin: 10px 0;
+            padding-left: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🔍 API Debug Tool</h1>
+        <p class="subtitle">Test your backend connection and API responses</p>
+
+        <!-- Test 1: Backend Health -->
+        <div class="test-section">
+            <h2>Test 1: Backend Server Status</h2>
+            <p>Check if backend server is running on port 5000</p>
+            <button onclick="testBackendHealth()">🏥 Check Backend Health</button>
+            <div id="health-result"></div>
+        </div>
+
+        <!-- Test 2: Fetch Jobs -->
+        <div class="test-section">
+            <h2>Test 2: Fetch Jobs from API</h2>
+            <p>Get all jobs from MongoDB database</p>
+            <button onclick="testFetchJobs()">📋 Fetch Jobs</button>
+            <div id="jobs-result"></div>
+        </div>
+
+        <!-- Test 3: API Scripts Loaded -->
+        <div class="test-section">
+            <h2>Test 3: Check API Scripts</h2>
+            <p>Verify if api.js is loaded correctly</p>
+            <button onclick="checkScripts()">🔧 Check Scripts</button>
+            <div id="scripts-result"></div>
+        </div>
+
+        <!-- Test 4: CORS Test -->
+        <div class="test-section">
+            <h2>Test 4: CORS Configuration</h2>
+            <p>Test Cross-Origin Resource Sharing</p>
+            <button onclick="testCORS()">🌐 Test CORS</button>
+            <div id="cors-result"></div>
+        </div>
+    </div>
+
+    <script src="js/api.js"></script>
+    <script>
+        const API_URL = 'http://localhost:5000/api';
+
+        // Test 1: Backend Health
+        async function testBackendHealth() {
+            const resultDiv = document.getElementById('health-result');
+            resultDiv.innerHTML = '<div class="info">Testing...<span class="loading"></span></div>';
+            
+            try {
+                const response = await fetch(`${API_URL}/health`);
+                const data = await response.json();
+                
+                if (response.ok) {
+                    resultDiv.innerHTML = `
+                        <div class="success">
+                            <strong>✅ Backend is ONLINE!</strong>
+                            <span class="status-badge status-online">RUNNING</span>
+                            <pre>${JSON.stringify(data, null, 2)}</pre>
+                        </div>
+                    `;
+                } else {
+                    throw new Error('Backend returned error');
+                }
+            } catch (error) {
+                resultDiv.innerHTML = `
+                    <div class="error">
+                        <strong>❌ Backend is OFFLINE!</strong>
+                        <span class="status-badge status-offline">NOT RUNNING</span>
+                        <p><strong>Error:</strong> ${error.message}</p>
+                        <div class="step-list">
+                            <p><strong>Solution:</strong></p>
+                            <ol>
+                                <li>Open terminal in VS Code</li>
+                                <li>Run: <code>cd backend</code></li>
+                                <li>Run: <code>node server.js</code></li>
+                                <li>Come back and test again</li>
+                            </ol>
+                        </div>
+                    </div>
+                `;
+            }
+        }
+
+        // Test 2: Fetch Jobs
+        async function testFetchJobs() {
+            const resultDiv = document.getElementById('jobs-result');
+            resultDiv.innerHTML = '<div class="info">Fetching jobs...<span class="loading"></span></div>';
+            
+            try {
+                const response = await fetch(`${API_URL}/jobs`);
+                const data = await response.json();
+                
+                if (response.ok && data.success) {
+                    const jobsList = data.data.map((job, i) => 
+                        `${i + 1}. ${job.title} - ${job.location}`
+                    ).join('\n');
+                    
+                    resultDiv.innerHTML = `
+                        <div class="success">
+                            <strong>✅ Jobs Fetched Successfully!</strong>
+                            <p><strong>Total Jobs:</strong> ${data.count}</p>
+                            <pre>${jobsList}</pre>
+                            <details>
+                                <summary style="cursor: pointer; margin-top: 10px; font-weight: 600;">View Full Response</summary>
+                                <pre>${JSON.stringify(data, null, 2)}</pre>
+                            </details>
+                        </div>
+                    `;
+                } else {
+                    throw new Error(data.error || 'Failed to fetch jobs');
+                }
+            } catch (error) {
+                resultDiv.innerHTML = `
+                    <div class="error">
+                        <strong>❌ Failed to Fetch Jobs!</strong>
+                        <p><strong>Error:</strong> ${error.message}</p>
+                        <p>Make sure backend is running and database is seeded.</p>
+                    </div>
+                `;
+            }
+        }
+
+        // Test 3: Check Scripts
+        function checkScripts() {
+            const resultDiv = document.getElementById('scripts-result');
+            
+            const checks = {
+                'JobAPI': typeof JobAPI !== 'undefined',
+                'ApplicationAPI': typeof ApplicationAPI !== 'undefined',
+                'ContactAPI': typeof ContactAPI !== 'undefined',
+                'HealthAPI': typeof HealthAPI !== 'undefined',
+                'API_BASE_URL': typeof API_BASE_URL !== 'undefined'
+            };
+            
+            const allLoaded = Object.values(checks).every(v => v);
+            
+            const checksList = Object.entries(checks).map(([name, loaded]) => 
+                `${loaded ? '✅' : '❌'} ${name}: ${loaded ? 'Loaded' : 'Not Found'}`
+            ).join('\n');
+            
+            if (allLoaded) {
+                resultDiv.innerHTML = `
+                    <div class="success">
+                        <strong>✅ All API Scripts Loaded!</strong>
+                        <pre>${checksList}</pre>
+                        <p style="margin-top: 10px;"><strong>API Base URL:</strong> ${API_BASE_URL}</p>
+                    </div>
+                `;
+            } else {
+                resultDiv.innerHTML = `
+                    <div class="error">
+                        <strong>❌ Some Scripts Missing!</strong>
+                        <pre>${checksList}</pre>
+                        <p>Make sure api.js is included in your HTML file.</p>
+                    </div>
+                `;
+            }
+        }
+
+        // Test 4: CORS Test
+        async function testCORS() {
+            const resultDiv = document.getElementById('cors-result');
+            resultDiv.innerHTML = '<div class="info">Testing CORS...<span class="loading"></span></div>';
+            
+            try {
+                const response = await fetch(`${API_URL}/health`, {
+                    method: 'GET',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                });
+                
+                const corsHeaders = {
+                    'Access-Control-Allow-Origin': response.headers.get('Access-Control-Allow-Origin'),
+                    'Access-Control-Allow-Methods': response.headers.get('Access-Control-Allow-Methods'),
+                    'Access-Control-Allow-Headers': response.headers.get('Access-Control-Allow-Headers')
+                };
+                
+                resultDiv.innerHTML = `
+                    <div class="success">
+                        <strong>✅ CORS is Working!</strong>
+                        <p>Backend is accepting requests from this origin.</p>
+                        <details>
+                            <summary style="cursor: pointer; margin-top: 10px; font-weight: 600;">View CORS Headers</summary>
+                            <pre>${JSON.stringify(corsHeaders, null, 2)}</pre>
+                        </details>
+                    </div>
+                `;
+            } catch (error) {
+                resultDiv.innerHTML = `
+                    <div class="error">
+                        <strong>❌ CORS Error!</strong>
+                        <p><strong>Error:</strong> ${error.message}</p>
+                        <p>Backend might be blocking requests from this origin.</p>
+                    </div>
+                `;
+            }
+        }
+
+        // Auto-run tests on page load
+        window.onload = () => {
+            console.log('🔍 Debug page loaded');
+            testBackendHealth();
+        };
+    </script>
+</body>
+</html>

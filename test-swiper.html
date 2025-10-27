@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Swiper Test</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <style>
+        body {
+            background: #0a1628;
+            color: white;
+            font-family: Arial, sans-serif;
+            padding: 50px;
+        }
+        
+        .testimonials-swiper {
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+            overflow: hidden;
+            padding-bottom: 50px;
+        }
+        
+        .swiper-slide {
+            background: #1a2332;
+            padding: 40px;
+            border-radius: 15px;
+            text-align: center;
+        }
+        
+        .swiper-pagination-bullet {
+            background: rgba(255, 255, 255, 0.5);
+            width: 12px;
+            height: 12px;
+        }
+        
+        .swiper-pagination-bullet-active {
+            background: #0fff73;
+            width: 14px;
+            height: 14px;
+        }
+        
+        h1 {
+            text-align: center;
+            color: #0fff73;
+            margin-bottom: 30px;
+        }
+        
+        .status {
+            text-align: center;
+            margin-top: 20px;
+            padding: 20px;
+            background: #1a2332;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>🧪 Swiper Autoplay Test</h1>
+    
+    <div class="swiper testimonials-swiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <h2>Slide 1</h2>
+                <p>This is the first testimonial slide</p>
+            </div>
+            <div class="swiper-slide">
+                <h2>Slide 2</h2>
+                <p>This is the second testimonial slide</p>
+            </div>
+            <div class="swiper-slide">
+                <h2>Slide 3</h2>
+                <p>This is the third testimonial slide</p>
+            </div>
+        </div>
+        <div class="swiper-pagination"></div>
+    </div>
+    
+    <div class="status" id="status">
+        <p>⏳ Initializing swiper...</p>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+        const statusDiv = document.getElementById('status');
+        
+        function updateStatus(message) {
+            statusDiv.innerHTML = '<p>' + message + '</p>';
+            console.log(message);
+        }
+        
+        try {
+            updateStatus('🔍 Checking if Swiper is loaded...');
+            
+            if (typeof Swiper === 'undefined') {
+                updateStatus('❌ ERROR: Swiper library not loaded!');
+            } else {
+                updateStatus('✅ Swiper library loaded successfully');
+                
+                const swiper = new Swiper('.testimonials-swiper', {
+                    modules: [Swiper.Autoplay, Swiper.Pagination],
+                    slidesPerView: 1,
+                    spaceBetween: 30,
+                    loop: true,
+                    speed: 600,
+                    autoplay: {
+                        delay: 3000,
+                        disableOnInteraction: false,
+                    },
+                    pagination: {
+                        el: '.swiper-pagination',
+                        clickable: true,
+                    },
+                    on: {
+                        init: function() {
+                            updateStatus('✅ Swiper initialized! Total slides: ' + this.slides.length + '<br>▶️ Autoplay running: ' + this.autoplay.running + '<br>⏱️ Will change every 3 seconds');
+                        },
+                        slideChange: function() {
+                            updateStatus('🔄 Slide changed to: ' + (this.realIndex + 1) + '<br>▶️ Autoplay is active');
+                        }
+                    }
+                });
+                
+                // Force start autoplay after 100ms
+                setTimeout(() => {
+                    if (swiper.autoplay && !swiper.autoplay.running) {
+                        swiper.autoplay.start();
+                        updateStatus('🚀 Autoplay manually started!');
+                    }
+                }, 100);
+            }
+        } catch (error) {
+            updateStatus('❌ ERROR: ' + error.message);
+            console.error('Full error:', error);
+        }
+    </script>
+</body>
+</html>
