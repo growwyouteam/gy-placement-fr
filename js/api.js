@@ -4,7 +4,7 @@
  */
 
 // API Base URL - Update this based on your backend server
-const API_BASE_URL = 'http://localhost:5000/api';
+const API_BASE_URL = 'https://gy-placement-back.vercel.app/api';
 
 /**
  * Generic API request handler
