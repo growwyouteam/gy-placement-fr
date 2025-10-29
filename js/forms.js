@@ -64,7 +64,6 @@ function initContactForm() {
         throw new Error(response.error || 'Failed to send message');
       }
     } catch (error) {
-      console.error('Contact form error:', error);
       showToast(error.message || 'Failed to send message. Please try again.', 'error');
     } finally {
       submitBtn.disabled = false;
@@ -135,7 +134,6 @@ function initJobApplicationForm() {
         throw new Error(response.error || 'Failed to submit application');
       }
     } catch (error) {
-      console.error('Application form error:', error);
       showToast(error.message || 'Failed to submit application. Please try again.', 'error');
     } finally {
       submitBtn.disabled = false;
@@ -167,7 +165,7 @@ async function populateJobTitles() {
       });
     }
   } catch (error) {
-    console.error('Error loading job titles:', error);
+    // Error loading job titles handled silently
   }
 }
 

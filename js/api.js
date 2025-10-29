@@ -28,23 +28,11 @@ async function apiRequest(endpoint, options = {}) {
     const data = await response.json();
 
     if (!response.ok) {
-      // Log detailed error information
-      console.error('API Request Failed:', {
-        url,
-        status: response.status,
-        statusText: response.statusText,
-        errorData: data
-      });
-      
-      // Log the actual error message separately for visibility
-      console.error('❌ Backend Error Message:', data.error || data.message || 'No error message');
-      
       throw new Error(data.error || data.message || `API request failed: ${response.status} ${response.statusText}`);
     }
 
     return data;
   } catch (error) {
-    console.error('API Error:', error);
     throw error;
   }
 }

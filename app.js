@@ -166,8 +166,6 @@ document.addEventListener('DOMContentLoaded', function() {
   // Initialize Swiper for testimonials
   const swiperElement = document.querySelector('.testimonials-swiper');
   if (swiperElement) {
-    console.log('🔍 Swiper element found, initializing...');
-    
     try {
       const testimonialsSwiper = new Swiper('.testimonials-swiper', {
         slidesPerView: 1,
@@ -183,19 +181,6 @@ document.addEventListener('DOMContentLoaded', function() {
           el: '.swiper-pagination',
           clickable: true,
           type: 'bullets',
-        },
-        on: {
-          init: function() {
-            console.log('✅ Swiper initialized successfully!');
-            console.log('📊 Total slides:', this.slides.length);
-            console.log('▶️ Autoplay running:', this.autoplay.running);
-          },
-          slideChange: function() {
-            console.log('🔄 Slide changed to:', this.realIndex + 1);
-          },
-          autoplayStart: function() {
-            console.log('▶️ Autoplay started');
-          }
         }
       });
       
@@ -203,16 +188,11 @@ document.addEventListener('DOMContentLoaded', function() {
       setTimeout(() => {
         if (testimonialsSwiper.autoplay) {
           testimonialsSwiper.autoplay.start();
-          console.log('🚀 Autoplay force started');
         }
       }, 200);
-      
-      console.log('✅ Swiper setup complete');
     } catch (error) {
-      console.error('❌ Swiper initialization error:', error);
+      // Swiper initialization failed silently
     }
-  } else {
-    console.log('❌ Swiper element not found!');
   }
 });
 
@@ -261,7 +241,7 @@ async function logout() {
       await AuthAPI.logout();
     }
   } catch (error) {
-    console.error('Logout error:', error);
+    // Logout error handled silently
   } finally {
     // Clear all auth data from localStorage
     localStorage.removeItem('isLoggedIn');
@@ -337,11 +317,8 @@ function animateCounter() {
 async function loadJobs() {
   const jobGrid = document.getElementById('jobGrid');
   if (!jobGrid) {
-    console.log('jobGrid element not found');
     return;
   }
-
-  console.log('Loading jobs from API...');
 
   try {
     // Show loading state
@@ -354,7 +331,6 @@ async function loadJobs() {
 
     // Fetch jobs from backend API
     const response = await JobAPI.getAllJobs();
-    console.log('API Response:', response);
     
     if (response.success && response.data) {
       jobs = response.data;
@@ -398,13 +374,6 @@ async function loadJobs() {
       });
     }
   } catch (error) {
-    console.error('Error loading jobs:', error);
-    console.error('Error details:', {
-      message: error.message,
-      stack: error.stack,
-      type: error.name
-    });
-    
     // Show detailed error message
     const errorMsg = error.message.includes('fetch') 
       ? '❌ Backend server is not running! Start it with: cd backend && npm run dev'
@@ -482,7 +451,6 @@ async function searchJobs(keyword) {
       });
     }
   } catch (error) {
-    console.error('Error searching jobs:', error);
     jobGrid.innerHTML = '<p class="error-message">Search failed. Please try again.</p>';
     showToast('Search failed', 'error');
   }
@@ -571,8 +539,6 @@ function updateAuthUI() {
       profileDropdown.classList.remove('show');
     }
   });
-
-  console.log('Auth UI ready');
 }
 
 // Call on page load

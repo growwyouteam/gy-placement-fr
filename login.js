@@ -110,7 +110,6 @@
                     }, 1000);
                 }
             } catch (error) {
-                console.error('Login error:', error);
                 showToast(error.message || 'Login failed. Please try again.', 'error');
                 hideLoading(signInBtn, "Login");
             }
@@ -182,7 +181,6 @@
                     }, 1000);
                 }
             } catch (error) {
-                console.error('Signup error:', error);
                 showToast(error.message || 'Registration failed. Please try again.', 'error');
                 hideLoading(signUpBtn, "Sign up");
             }

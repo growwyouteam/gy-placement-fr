@@ -200,15 +200,6 @@ async function handleFormSubmit(e) {
       finalDate: formData.get('finalDate')
     };
 
-    // Log the data being sent for debugging
-    console.log('📤 Submitting application data:', applicationData);
-    console.log('📋 Required fields check:', {
-      fullName: applicationData.fullName || '❌ MISSING',
-      email: applicationData.email || '❌ MISSING',
-      phone: applicationData.phone || '❌ MISSING',
-      jobTitle: applicationData.jobTitle || '❌ MISSING'
-    });
-
     // Call API to submit application
     const response = await ApplicationAPI.submitApplication(applicationData);
 
@@ -235,13 +226,6 @@ async function handleFormSubmit(e) {
       throw new Error(response.message || 'Failed to submit application');
     }
   } catch (error) {
-    console.error('Application submission error:', error);
-    console.error('Error details:', {
-      message: error.message,
-      stack: error.stack,
-      name: error.name
-    });
-    
     // Show detailed error message
     const errorMessage = error.message || 'Failed to submit application. Please try again.';
     showToast(errorMessage, 'error');
@@ -278,7 +262,7 @@ document.addEventListener('DOMContentLoaded', function() {
           jobTitleField.value = job.title;
         }
       } catch (error) {
-        console.error('Error loading selected job:', error);
+        // Error loading selected job handled silently
       }
     }
   }
